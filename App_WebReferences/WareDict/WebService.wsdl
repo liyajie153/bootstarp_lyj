@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WAREDICT_STOCK">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WAREDICT_STOCKResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WAREDICT_STOCKResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WAREDICT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WAREDICTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WAREDICTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WAREDICT_STOCKSoapIn">
+    <wsdl:part name="parameters" element="tns:WAREDICT_STOCK" />
+  </wsdl:message>
+  <wsdl:message name="WAREDICT_STOCKSoapOut">
+    <wsdl:part name="parameters" element="tns:WAREDICT_STOCKResponse" />
+  </wsdl:message>
+  <wsdl:message name="WAREDICTSoapIn">
+    <wsdl:part name="parameters" element="tns:WAREDICT" />
+  </wsdl:message>
+  <wsdl:message name="WAREDICTSoapOut">
+    <wsdl:part name="parameters" element="tns:WAREDICTResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceStockSoap">
+    <wsdl:operation name="WAREDICT_STOCK">
+      <wsdl:input message="tns:WAREDICT_STOCKSoapIn" />
+      <wsdl:output message="tns:WAREDICT_STOCKSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WAREDICT">
+      <wsdl:input message="tns:WAREDICTSoapIn" />
+      <wsdl:output message="tns:WAREDICTSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceStockSoap" type="tns:WebServiceStockSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WAREDICT_STOCK">
+      <soap:operation soapAction="http://tempuri.org/WAREDICT_STOCK" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WAREDICT">
+      <soap:operation soapAction="http://tempuri.org/WAREDICT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceStockSoap12" type="tns:WebServiceStockSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WAREDICT_STOCK">
+      <soap12:operation soapAction="http://tempuri.org/WAREDICT_STOCK" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WAREDICT">
+      <soap12:operation soapAction="http://tempuri.org/WAREDICT" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceStock">
+    <wsdl:port name="WebServiceStockSoap" binding="tns:WebServiceStockSoap">
+      <soap:address location="http://172.16.100.117:8082/WebSer/WebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceStockSoap12" binding="tns:WebServiceStockSoap12">
+      <soap12:address location="http://172.16.100.117:8082/WebSer/WebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

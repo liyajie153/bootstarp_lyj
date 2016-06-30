@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://172.16.8.169:8011/SinoPharmSOA8058/ProxyServices/EBS_ITF_ImportMedicineInfo_apps_PS?wsdl" filename="EBS_ITF_ImportMedicineInfo-concrete.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://172.16.8.169:8011/SinoPharmSOA8058/ProxyServices/EBS_ITF_ImportMedicineInfo_apps_PS?WSDL/SinoPharmSOA8058/Resources/jca/EBS_ITF_ImportMedicineInfo" filename="EBS_ITF_ImportMedicineInfo.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.SchemaReference" url="http://172.16.8.169:8011/SinoPharmSOA8058/ProxyServices/EBS_ITF_ImportMedicineInfo_apps_PS?SCHEMA/SinoPharmSOA8058/Resources/jca/xsd/EBS_ITF_ImportMedicineInfo_sp" filename="EBS_ITF_ImportMedicineInfo_sp.xsd" />
+  </Results>
+</DiscoveryClientResultsFile>
